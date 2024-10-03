@@ -50,7 +50,7 @@ public class Viagem {
         this.rsl = rsl;
     }
     
-        // Mapa das cidades e suas cordenadas, sugestão do chatGPTeta
+    // Mapa das cidades e suas cordenadas, sugestão do chatGPTeta
     private static final Map<String, double[]> cidades = new HashMap<>();
     
     static {
@@ -77,7 +77,7 @@ public class Viagem {
 
         return calcularDistancia(coordsPartida[0], coordsPartida[1], coordsDestino[0], coordsDestino[1]);
     }
-
+    //Metodo que calcula distancia
     private double calcularDistancia(double latitudePartida, double longitudePartida, double latitudeDestino, double longitudeDestino) {
         final int R = 6371; // Raio da Terra em quilômetros
         double latDistance = Math.toRadians(latitudeDestino - latitudePartida);
@@ -86,17 +86,18 @@ public class Viagem {
                    Math.cos(Math.toRadians(latitudePartida)) * Math.cos(Math.toRadians(latitudeDestino)) *
                    Math.sin(lonDistance / 2) * Math.sin(lonDistance / 2);
         double c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
-        //Retorna a distância em KM
+       
+    //transforma e retorna a distancia em Quilometros
         return R * c; 
     }
     
-    //Calcula os litros gastos
+    //Calculo de litros gastos
     public double LitrosGastos() {
         double distancia = DistanciaAB();
         return distancia / this.getKml(); 
     }
     
-    //Calcula o custo da Viagem
+    //Calculo de custo da viagem
      public double CalcularGasto() {
         double litrosGastos = LitrosGastos();
         return litrosGastos * this.getRsl(); 

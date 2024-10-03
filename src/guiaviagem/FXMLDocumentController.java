@@ -40,7 +40,7 @@ public class FXMLDocumentController implements Initializable {
     private TextField txtRSL; 
 
     
-    
+    //Formata os label para que tragam apenas duas casas após o ponto
     private DecimalFormat df = new DecimalFormat("#.00");
     
     @FXML
@@ -48,7 +48,7 @@ public class FXMLDocumentController implements Initializable {
         String partida = comboPartida.getValue();
         String destino = comboDestino.getValue();
 
-        if (partida != null && destino != null) {
+        if (partida != null && destino != null && !partida.equals(destino)) {
             Viagem viagem = new Viagem();
             viagem.setPartida(partida);
             viagem.setDestino(destino);
@@ -84,7 +84,7 @@ public class FXMLDocumentController implements Initializable {
      
             
         } else {
-            JOptionPane.showMessageDialog(null, "Insira uma cidade de Partida e o Destino");
+            JOptionPane.showMessageDialog(null, "Insira uma cidade de Partida e uma de Destino(Não podem ser iguais)");
         }
      
     }
