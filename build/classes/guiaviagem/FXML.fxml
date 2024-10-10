@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="425.0" prefWidth="382.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="guiaviagem.FXMLController">
+    <stylesheets>
+        <URL value="@fxml.css" />
+    </stylesheets>
+   <children>
+      <Label layoutX="87.0" layoutY="2.0" text="Calcula Viagem com parada" textFill="#f50000">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font>
+      </Label>
+      <Label layoutX="14.0" layoutY="45.0" text="Partida" />
+      <Label layoutX="14.0" layoutY="77.0" text="Destino 1" />
+      <Label layoutX="14.0" layoutY="110.0" text="Destino 2" />
+      <ComboBox fx:id="comboPartida1" layoutX="71.0" layoutY="41.0" prefWidth="150.0" />
+      <ComboBox fx:id="comboDestino1" layoutX="71.0" layoutY="73.0" prefWidth="150.0" />
+      <ComboBox fx:id="comboDestino2" layoutX="71.0" layoutY="106.0" prefWidth="150.0" />
+      <Label layoutX="14.0" layoutY="159.0" text="KM/L" />
+      <Label layoutX="14.0" layoutY="196.0" text="R$/L" />
+      <Label fx:id="lblResult1" alignment="CENTER" contentDisplay="CENTER" layoutX="6.0" layoutY="257.0" prefHeight="17.0" prefWidth="372.0" textAlignment="CENTER">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font></Label>
+      <Label layoutX="26.0" layoutY="324.0" text="Litros gastos:" />
+      <Label layoutX="26.0" layoutY="349.0" text="Valor da viagem:" />
+      <TextField fx:id="txtRSL1" layoutX="72.0" layoutY="184.0" />
+      <TextField fx:id="txtKML1" layoutX="72.0" layoutY="147.0" />
+      <Label layoutX="29.0" layoutY="301.0" text="Distancia percorrida:" />
+      <Label fx:id="lblDistancia1" layoutX="177.0" layoutY="301.0" prefHeight="17.0" prefWidth="167.0" />
+      <Label fx:id="lblLitros1" layoutX="175.0" layoutY="324.0" prefHeight="17.0" prefWidth="167.0" />
+      <Label fx:id="lblCusto1" layoutX="175.0" layoutY="349.0" prefHeight="17.0" prefWidth="167.0" />
+      <Button fx:id="btnCalcular" layoutX="52.0" layoutY="220.0" mnemonicParsing="false" onAction="#Calcular1" text="Calcular" />
+      <Button fx:id="btnfechar" layoutX="240.0" layoutY="220.0" mnemonicParsing="false" onAction="#fechaTela2" text="Voltar para tela inicial" />
+   </children>
+</AnchorPane>

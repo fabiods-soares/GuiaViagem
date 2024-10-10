@@ -1,19 +1,24 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/javafx/FXML2.java to edit this template
- */
+
 package guiaviagem;
 
+import com.sun.deploy.uitoolkit.ToolkitStore;
 import java.net.URL;
 import java.text.DecimalFormat;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Parent;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
-import java.util.Map;
+import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.scene.control.TextField;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
+import javafx.scene.layout.StackPane;
+import javafx.stage.Stage;
 import javax.swing.JOptionPane;
 
 /**
@@ -86,9 +91,28 @@ public class FXMLDocumentController implements Initializable {
         } else {
             JOptionPane.showMessageDialog(null, "Insira uma cidade de Partida e uma de Destino(Não podem ser iguais)");
         }
-     
-    }
+
+    }    
     
+    @FXML
+    void Tela2(ActionEvent event) {
+        try {
+            FXMLLoader fxml = new FXMLLoader(getClass().getResource("FXML.fxml"));
+            Parent root = fxml.load();
+            
+            Stage stage = new Stage();
+            
+            stage.setTitle("Calcula com Parada");
+            stage.setScene(new Scene(root));
+            stage.show();
+            
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        
+
+    }
+       
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO

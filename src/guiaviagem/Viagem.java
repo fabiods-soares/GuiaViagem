@@ -8,6 +8,7 @@ public class Viagem {
     
     private String partida;
     private String destino;
+    private String destino2;
     private int kml;
     private double rsl;
 
@@ -43,9 +44,20 @@ public class Viagem {
         this.rsl = rsl;
     }
 
+    public String getDestino2() {
+        return destino2;
+    }
+
+    public void setDestino2(String destino2) {
+        this.destino2 = destino2;
+    }
+    
+    
+
        public Viagem() {
         this.partida = partida;
         this.destino = destino;
+        this.destino2 = destino2;
         this.kml = kml;
         this.rsl = rsl;
     }
@@ -77,6 +89,25 @@ public class Viagem {
 
         return calcularDistancia(coordsPartida[0], coordsPartida[1], coordsDestino[0], coordsDestino[1]);
     }
+    
+     public double DistanciaAB1() {
+        double distancia1 = calcularDistanciaEntreDestinos(partida, destino);
+        double distancia2 = calcularDistanciaEntreDestinos(destino, destino2);
+        return distancia1 + distancia2; // Soma as distâncias
+    }
+    
+    // Método que calcula a distância entre dois destinos
+    private double calcularDistanciaEntreDestinos(String origem, String destino) {
+        double[] coordsOrigem = cidades.get(origem);
+        double[] coordsDestino = cidades.get(destino);
+
+        if (coordsOrigem == null || coordsDestino == null) {
+            throw new IllegalArgumentException("Cidade não encontrada.");
+        }
+
+        return calcularDistancia(coordsOrigem[0], coordsOrigem[1], coordsDestino[0], coordsDestino[1]);
+    }
+    
     //Metodo que calcula distancia
     private double calcularDistancia(double latitudePartida, double longitudePartida, double latitudeDestino, double longitudeDestino) {
         final int R = 6371; // Raio da Terra em quilômetros

@@ -8,7 +8,7 @@
   </information>
   <resources>
     <j2se version="1.6+" href="http://java.sun.com/products/autodl/j2se"/>
-    <jar href="GuiaViagem.jar" size="6586" download="eager" />
+    <jar href="GuiaViagem.jar" size="10730" download="eager" />
   </resources>
   <jfx:javafx-desc  width="800" height="600" main-class="guiaviagem.GuiaViagem"  name="GuiaViagem" />
   <update check="always"/>
